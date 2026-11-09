@@ -1,0 +1,22 @@
+{
+    "sourceFile": ".devcontainer/devcontainer.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1794256156105,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1794256167886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n {\n \t\"name\": \"python-app-service-postgresql-redis-infra\",\n \t\"dockerComposeFile\": \"docker-compose.yml\",\n \t\"service\": \"app\",\n-\t\"workspaceFolder\": workspaceFolder\": \"/workspace\",\n+\t\"workspaceFolder\": \"/workspace\",\n \t\"features\": {\n \t\t\"ghcr.io/azure/azure-dev/azd:latest\": {}\n     },\n \t\"customizations\": {\n"
+                }
+            ],
+            "date": 1794256156105,
+            "name": "Commit-0",
+            "content": "{\n\t\"name\": \"python-app-service-postgresql-redis-infra\",\n\t\"dockerComposeFile\": \"docker-compose.yml\",\n\t\"service\": \"app\",\n\t\"workspaceFolder\": workspaceFolder\": \"/workspace\",\n\t\"features\": {\n\t\t\"ghcr.io/azure/azure-dev/azd:latest\": {}\n    },\n\t\"customizations\": {\n\t\t\"vscode\": {\n\t\t\t// Add the IDs of extensions you want installed when the container is created.\n\t\t\t\"extensions\": [\n\t\t\t\t\"ms-azuretools.azure-dev\",\n\t\t\t\t\"ms-python.python\",\n\t\t\t\t\"ms-python.vscode-pylance\",\n\t\t\t\t\"mtxr.sqltools\",\n\t\t\t\t\"mtxr.sqltools-driver-pg\",\n\t\t\t\t\"GitHub.copilot\"\n\t\t\t],\n\t\t\t\"settings\": {\n\t\t\t\t\"sqltools.connections\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"name\": \"Container database\",\n\t\t\t\t\t\t\"driver\": \"PostgreSQL\",\n\t\t\t\t\t\t\"previewLimit\": 50,\n\t\t\t\t\t\t\"server\": \"localhost\",\n\t\t\t\t\t\t\"port\": 5432,\n\t\t\t\t\t\t\"database\": \"app\",\n\t\t\t\t\t\t\"username\": \"app_user\",\n\t\t\t\t\t\t\"password\": \"app_password\"\n\t\t\t\t\t}\n\t\t\t\t],\n\t\t\t\t\"python.languageServer\": \"Pylance\",\n\t\t\t\t\"python.linting.enabled\": true,\n\t\t\t\t\"python.linting.mypyEnabled\": true,\n\t\t\t\t\"python.testing.pytestEnabled\": true,\n\t\t\t\t\"python.formatting.provider\": \"black\",\n\t\t\t\t\"python.formatting.blackArgs\": [\n\t\t\t\t\t\"--line-length=80\"\n\t\t\t\t],\n\t\t\t\t\"python.formatting.autopep8Path\": \"/usr/local/py-utils/bin/autopep8\",\n\t\t\t\t\"python.formatting.blackPath\": \"/usr/local/py-utils/bin/black\",\n\t\t\t\t\"python.formatting.yapfPath\": \"/usr/local/py-utils/bin/yapf\",\n\t\t\t\t\"python.linting.banditPath\": \"/usr/local/py-utils/bin/bandit\",\n\t\t\t\t\"python.linting.flake8Path\": \"/usr/local/py-utils/bin/flake8\",\n\t\t\t\t\"python.linting.mypyPath\": \"/usr/local/py-utils/bin/mypy\",\n\t\t\t\t\"python.linting.pycodestylePath\": \"/usr/local/py-utils/bin/pycodestyle\",\n\t\t\t\t\"python.linting.pydocstylePath\": \"/usr/local/py-utils/bin/pydocstyle\",\n\t\t\t\t\"python.linting.pylintPath\": \"/usr/local/py-utils/bin/pylint\",\n\t\t\t\t\"python.testing.pytestPath\": \"/usr/local/py-utils/bin/pytest\"\n\t\t\t}\n\t\t}\n\t},\n\t// Use 'forwardPorts' to make a list of ports inside the container available locally. \n\t// \"forwardPorts\": [],\n\t// Use 'postCreateCommand' to run commands after the container is created.\n\t\"postCreateCommand\": \"pip install -r requirements.txt\",\n\t// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.\n\t\"remoteUser\": \"vscode\"\n}\n"
+        }
+    ]
+}
