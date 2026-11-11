@@ -1,0 +1,18 @@
+{
+    "sourceFile": ".dockerignore",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1794337897312,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1794337897312,
+            "name": "Commit-0",
+            "content": ".git\n.devcontainer\n__pycache__\n*.pyc\n.venv\n.env"
+        }
+    ]
+}

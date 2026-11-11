@@ -1,0 +1,22 @@
+{
+    "sourceFile": "Dockerfile",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1794337838299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1794345247763,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n FROM python:3.12-slim\n \n # Build tools, in case requirements.txt uses psycopg2 (not psycopg2-binary)\n-RUN apt-get update && apt-get install -y --no-install-recommends gcc libpq-dev \\\n+RUN apt-get update && apt-get install -y --no-install-recommends build-essential libpq-dev \\\n     && rm -rf /var/lib/apt/lists/*\n \n WORKDIR /app\n COPY requirements.txt .\n"
+                }
+            ],
+            "date": 1794337838299,
+            "name": "Commit-0",
+            "content": "FROM python:3.12-slim\n\n# Build tools, in case requirements.txt uses psycopg2 (not psycopg2-binary)\nRUN apt-get update && apt-get install -y --no-install-recommends gcc libpq-dev \\\n    && rm -rf /var/lib/apt/lists/*\n\nWORKDIR /app\nCOPY requirements.txt .\nRUN pip install --no-cache-dir -r requirements.txt gunicorn\n\nCOPY . .\n\nEXPOSE 8000\nCMD [\"gunicorn\", \"--bind\", \"0.0.0.0:8000\", \"app:app\"]"
+        }
+    ]
+}
