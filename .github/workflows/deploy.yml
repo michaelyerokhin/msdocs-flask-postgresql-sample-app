@@ -2,7 +2,7 @@ name: Build and deploy to Container Apps
 
 on:
   push:
-    branches: [main]
+    branches: [starter-no-infra]
   workflow_dispatch:          # lets you run it manually too
 
 permissions:
