@@ -1,0 +1,22 @@
+{
+    "sourceFile": ".github/workflows/deploy.yml",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1794430099522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1794430130182,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   id-token: write             # needed for OIDC login\n   contents: read\n \n env:\n-  ACR: <your registry name>\n+  ACR: flasklearnacr\n   RG: flask-learn-rg\n   APP: flask-learn-app\n   IMAGE: flask-app\n \n"
+                }
+            ],
+            "date": 1794430099522,
+            "name": "Commit-0",
+            "content": "name: Build and deploy to Container Apps\n\non:\n  push:\n    branches: [main]\n  workflow_dispatch:          # lets you run it manually too\n\npermissions:\n  id-token: write             # needed for OIDC login\n  contents: read\n\nenv:\n  ACR: <your registry name>\n  RG: flask-learn-rg\n  APP: flask-learn-app\n  IMAGE: flask-app\n\njobs:\n  deploy:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n\n      - name: Log in to Azure (OIDC, no secret)\n        uses: azure/login@v2\n        with:\n          client-id: ${{ secrets.AZURE_CLIENT_ID }}\n          tenant-id: ${{ secrets.AZURE_TENANT_ID }}\n          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}\n\n      - name: Build and push image\n        run: |\n          az acr login --name $ACR\n          docker build -t $ACR.azurecr.io/$IMAGE:${{ github.sha }} .\n          docker push $ACR.azurecr.io/$IMAGE:${{ github.sha }}\n\n      - name: Point the container app at the new image\n        run: |\n          az containerapp update -g $RG --name $APP \\\n            --image $ACR.azurecr.io/$IMAGE:${{ github.sha }}"
+        }
+    ]
+}
